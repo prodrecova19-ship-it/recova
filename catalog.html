@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>Catálogo — RECOVA</title>
+<meta name="description" content="RECOVA — beats e produção para rap, trap, drill, Detroit e boombap.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">RECOVA</a>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="catalog.html">Catálogo</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="carrinho.html">Carrinho <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-btn" id="cart-open">Carrinho <span class="cart-badge" data-cart-count>0</span></button>
+      <button class="menu-btn" aria-label="Abrir menu">☰</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-head"><div class="container"><div class="eyebrow">Catálogo</div><h1>ESCOLHA<br>SEU ESTILO.</h1><p>Ouça · filtre · escolha · construa</p></div></section>
+<section class="section"><div class="container">
+<div class="toolbar"><div class="filters">
+<button class="filter active" data-genre="Todos">Todos</button><button class="filter" data-genre="Trap">Trap</button><button class="filter" data-genre="Drill">Drill</button><button class="filter" data-genre="Detroit">Detroit</button><button class="filter" data-genre="Boombap">Boombap</button>
+</div><input id="search" class="search" placeholder="Buscar beat, estilo ou BPM..."></div>
+<div id="count" class="result-count"></div><div id="catalog-grid" class="grid" style="margin-top:16px"></div>
+</div></section>
+</main>
+<footer class="footer"><div class="container footer-row"><span>RECOVA · BEATS, PRODUÇÃO E SONORIDADE REAL</span><span>PROD. RECOVA</span></div></footer>
+<div class="notice" aria-live="polite"></div>
+
+<div class="drawer-backdrop"></div>
+<aside class="drawer" aria-label="Carrinho">
+  <div class="drawer-head"><h2>Seu carrinho</h2><button class="close" aria-label="Fechar">×</button></div>
+  <div id="drawer-items" class="drawer-items"></div>
+  <div class="drawer-footer">
+    <div class="row total"><span>Total</span><span id="drawer-total">R$ 0,00</span></div>
+    <a href="carrinho.html" class="btn primary block">Abrir carrinho</a>
+  </div>
+</aside>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>document.querySelector("#cart-open")?.addEventListener("click",()=>R.openDrawer()));
+</script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

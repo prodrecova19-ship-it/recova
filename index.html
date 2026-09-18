@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>Início — RECOVA</title>
+<meta name="description" content="RECOVA — beats e produção para rap, trap, drill, Detroit e boombap.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">RECOVA</a>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="catalog.html">Catálogo</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="carrinho.html">Carrinho <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-btn" id="cart-open">Carrinho <span class="cart-badge" data-cart-count>0</span></button>
+      <button class="menu-btn" aria-label="Abrir menu">☰</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow">Beats / produção / direção sonora</div>
+    <h1>RECOVA</h1>
+    <div class="hero-sub">RAP / TRAP / DRILL / DETROIT / BOOMBAP</div>
+    <div class="actions"><a class="btn primary" href="catalog.html">Explorar catálogo →</a><a class="btn" href="contato.html">Produção personalizada</a></div>
+  </div>
+</section>
+<section class="section"><div class="container">
+  <div class="section-head"><div><div class="eyebrow">Seleção</div><h2>Beats em destaque</h2></div><a class="mini-link" href="catalog.html">Ver tudo →</a></div>
+  <div id="home-grid" class="grid"></div>
+  <div class="featured-note">Novos beats entram no catálogo conforme a produção avança.</div>
+</div></section>
+<section id="sobre" class="section"><div class="container split">
+  <div class="image-box"><img src="assets/covers/night-shift.svg" alt="Visual de capa RECOVA"></div>
+  <div class="copy"><div class="eyebrow">Sobre a RECOVA</div><h2>IDEIAS EM FORMA DE SOM.</h2>
+  <p>RECOVA é uma identidade de produção voltada para artistas que precisam de bases com assinatura, espaço para performance e direção clara de arranjo.</p>
+  <p>O catálogo mistura rap, trap, drill, Detroit e boombap, com foco em sonoridade urbana e produção autoral.</p>
+  <div class="stats"><div class="stat"><strong>12</strong><span>Beats demonstrativos</span></div><div class="stat"><strong>05</strong><span>Estéticas principais</span></div><div class="stat"><strong>01</strong><span>Identidade sonora</span></div></div>
+  </div>
+</div></section>
+<section class="section"><div class="container split">
+  <div class="copy"><div class="eyebrow">Produção personalizada</div><h2>UMA BASE FEITA PARA O PROJETO.</h2>
+  <p>Referência, BPM, clima, artista ou briefing completo. Mande o contexto e a produção pode partir do zero.</p>
+  <a class="btn primary" href="contato.html">Falar com RECOVA →</a>
+  </div>
+  <div class="image-box"><img src="assets/covers/pressure.svg" alt="Produção personalizada RECOVA"></div>
+</div></section>
+</main>
+<footer class="footer"><div class="container footer-row"><span>RECOVA · BEATS, PRODUÇÃO E SONORIDADE REAL</span><span>PROD. RECOVA</span></div></footer>
+<div class="notice" aria-live="polite"></div>
+
+<div class="drawer-backdrop"></div>
+<aside class="drawer" aria-label="Carrinho">
+  <div class="drawer-head"><h2>Seu carrinho</h2><button class="close" aria-label="Fechar">×</button></div>
+  <div id="drawer-items" class="drawer-items"></div>
+  <div class="drawer-footer">
+    <div class="row total"><span>Total</span><span id="drawer-total">R$ 0,00</span></div>
+    <a href="carrinho.html" class="btn primary block">Abrir carrinho</a>
+  </div>
+</aside>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>document.querySelector("#cart-open")?.addEventListener("click",()=>R.openDrawer()));
+</script>
+<script src="js/home.js"></script>
+</body>
+</html>

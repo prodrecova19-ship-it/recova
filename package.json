@@ -1,0 +1,13 @@
+{
+  "name": "recova-site-pro",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node tests/validate.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
