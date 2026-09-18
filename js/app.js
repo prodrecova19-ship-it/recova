@@ -96,14 +96,33 @@ const R = (() => {
       if(p){
         const beat=state.beats.find(x=>x.slug===p.dataset.preview);
         if(!beat?.audio){toast("Prévia pendente. Adicione o MP3 em data.json.");return;}
+
         let a=document.querySelector("#global-audio");
         if(!a){a=document.createElement("audio");a.id="global-audio";document.body.appendChild(a)}
-        a.src=beat.audio;a.play().catch(()=>toast("Clique novamente para reproduzir."));
+
+        const allButtons=[...document.querySelectorAll(".play-btn")];
+        const isSamePlaying = a.src && a.src.includes(encodeURIComponent(beat.slug)) && !a.paused;
+
+        if(isSamePlaying){
+          a.pause();
+          allButtons.forEach(btn=>btn.classList.remove("is-playing"));
+          return;
+        }
+
+        allButtons.forEach(btn=>btn.classList.toggle("is-playing", btn.dataset.preview === beat.slug));
+        a.src=beat.audio;
+        a.play().catch(()=>toast("Clique novamente para reproduzir."));
       }
+
       const remove=e.target.closest("[data-drawer-remove]");
       if(remove){
         const items=getCart();items.splice(Number(remove.dataset.drawerRemove),1);saveCart(items);renderDrawer();
       }
+    });
+
+    document.addEventListener("visibilitychange",()=>{
+      const a=document.querySelector("#global-audio");
+      if(document.hidden && a && !a.paused){ a.pause(); }
     });
   }
 
